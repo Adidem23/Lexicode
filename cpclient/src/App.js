@@ -9,7 +9,7 @@ function App() {
   const handleterminalComm = async (e) => {
     e.preventDefault();
     try {
-      axios.post("http://localhost:7000/dothing", { Name: "Sakshi Suryawanshi" }).then((res) => {
+      axios.post("http://localhost:7000/dothing", { TextFile: Text }).then((res) => {
         console.log(res.data)
       }).catch((err) => {
         console.log(`${err} is Occured`)
@@ -22,9 +22,10 @@ function App() {
 
   return (
     <>
-
       <textarea onChange={(e) => { SetText(e.target.value) }}></textarea>
-      <button onClick={handleterminalComm}>Click Me Here</button>
+      <br />
+      <br />
+      <button onClick={handleterminalComm}>Analyze</button>
     </>
   );
 }

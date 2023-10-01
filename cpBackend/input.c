@@ -1,20 +1,17 @@
-#include<stdio.h>
-/* This is a multi
-line comment*/ 
+#include <stdio.h>
+
 int main() {
-   int amount, rate, time, si, 56ee;
-   //This is a single line comment
-   printf("\nEnter Principal Amount : ");
-   scanf("%d", &amount);
- 
-   printf("\nEnter Rate of Interest : ");
-   scanf("%d", &rate);
- 
-   printf("\nEnter Period of Time   : ");
-   scanf("%d", &time);
-   scanf("",); 
-   si = (amount * rate * time) / 100;
-   printf("\nSimple Interest : %d", si);
-   printf("",); 
-   return(0);
+    double num1, num2, sum;
+
+    // Input
+    printf("Enter two numbers: ");
+    scanf("%lf %lf", &num1, &num2);
+
+    // Perform addition
+    sum = num1 + num2;
+
+    // Output
+    printf("Sum: %.2lf\n", sum);
+
+    return 0;
 }
