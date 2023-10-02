@@ -5,23 +5,8 @@
 	(			Punctuator			3
 	)			Punctuator			4
 	{			Punctuator			5
-	double			Keyword			6
-	num1			Identifier			7
-	,			Punctuator			8
-	num2			Identifier			9
-	,			Punctuator			10
-	sum			Identifier			11
-	;			Punctuator			12
-	;			Punctuator			13
-	;			Punctuator			14
-	sum			Identifier			15
-	=			Operator			16
-	num1			Identifier			17
-	+			Operator			18
-	num2			Identifier			19
-	;			Punctuator			20
-	;			Punctuator			21
-	return			Keyword			22
-	0			Constant			23
-	;			Punctuator			24
-	}			Punctuator			25
+	;			Punctuator			6
+	return			Keyword			7
+	0			Constant			8
+	;			Punctuator			9
+	}			Punctuator			10

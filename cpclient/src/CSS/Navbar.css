@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@200&display=swap');
+
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+          margin: 0;
+          padding: 0;
+}
+
+
+body {
+          font-family: 'Droid Sans Mono', 'monospace';
+}
+
+.navbar {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          background-color: transparent;
+          color: black;
+          padding: 1.5rem 2rem;
+          box-shadow: none;
+          font-weight: bold;
+
+}
+
+.logo {
+          display: flex;
+          align-items: center;
+}
+
+.logo img {
+          width: 70px;
+          height: 70px;
+          border-radius: 50%;
+}
+
+.logo-text {
+          margin-left: 1rem;
+}
+
+.nav-links {
+          list-style: none;
+          display: flex;
+          gap: 1.5rem;
+
+}
+
+.nav-links li a {
+          color: black;
+          text-decoration: none;
+          transition: color 0.3s;
+          padding: 0.5rem 0.75rem;
+}
+
+.nav-links li a:hover {
+          font-weight: bold;
+          color: white;
+          background: slateblue;
+}
