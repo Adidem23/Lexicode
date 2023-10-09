@@ -7,8 +7,7 @@ const HeroSection = () => {
 
                               <section className="hero">
                                         <div className="hero-content">
-                                                  <h1>Lexicode</h1>
-                                                  <p className='newp'>Let's Move Towards One Click Compilation</p>
+                                                  <h1>Compiler-Visulization</h1>
                                         </div>
                               </section>
 
