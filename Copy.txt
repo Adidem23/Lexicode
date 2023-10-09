@@ -5,3 +5,87 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
 source ~/.bashrc
 
 nvm install node
+
+--------------------------------------------------------------------------------
+
+## Sample C Code Without Faulty 
+
+#include <stdio.h>
+
+int main() {
+    printf("Hello, World!\n");
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    int age;
+    printf("Enter your age: ");
+    scanf("%d", &age);
+    printf("You are %d years old.\n", age);
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num > 0) {
+        printf("The number is positive.\n");
+    } else if (num < 0) {
+        printf("The number is negative.\n");
+    } else {
+        printf("The number is zero.\n");
+    }
+
+    return 0;
+}
+
+--------------------------------------------------------------------------------
+## Sample Code With Error : 
+
+#include <stdio.h>
+
+int main() {
+    int x = 10
+    printf("The value of x is: %d\n", x);
+    return 0;
+}
+
+
+
+#include <stdio.h>
+
+int main() {
+    int y;
+    printf("The value of y is: %d\n", y);
+    return 0;
+}
+
+
+#include <stdio.h>
+
+int add(int a, int b) {
+    return a + b;
+}
+
+int main() {
+    int result = add(5);
+    printf("The sum is: %d\n", result);
+    return 0;
+}
+
+
+
+
+
+
+
+
+
