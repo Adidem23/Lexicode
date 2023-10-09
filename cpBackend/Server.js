@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');
 const { exec } = require('child_process');
-const PORT = 7000;
+const PORT = 8000;
 const cors = require('cors');
 const fs = require('fs');
 const records = [];
@@ -92,9 +92,35 @@ app.get('/records', async (req, res) => {
                     }
 
                     res.send(records)
-                    records.splice(0,records.length);
+                    records.splice(0, records.length);
 
           });
+})
+
+app.post('/writeSyntaxFile', (req, res) => {
+          const TextFile = req.body.TextFile;
+
+          fs.writeFile('NewInput.c', TextFile, () => {
+                    console.log(" Contents are written To File !!")
+          })
+
+});
+
+app.post('/AnalyzeText', (req, res) => {
+
+          exec('gcc NewInput.c', (error, stderr) => {
+                    if (error) {
+                              res.json({ error: `${error.message}` });
+                              return;
+                    }
+                    if (stderr) {
+                              res.json({ error: stderr });
+                              return;
+                    }
+
+                    res.send("Compiled File Successfully");
+          });
+
 })
 
 

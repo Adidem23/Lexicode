@@ -13,7 +13,7 @@ const Navbar = () => {
 
             <ul className="nav-links">
                 <li><a href="#"><Link to="/lex">Lex Analysis</Link></a></li>
-                <li><a href="#">Syntax Analysis</a></li>
+                <li><a href="#"><Link to="/syntax">Syntax Analysis</Link></a></li>
                 <li><a href="#">Semantic Analysis</a></li>
                 <li><a href="#">Help</a></li>
             </ul>
