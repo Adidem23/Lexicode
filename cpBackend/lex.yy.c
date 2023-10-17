@@ -650,8 +650,8 @@ int yy_flex_debug = 0;
 #define YY_MORE_ADJ 0
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
-#line 1 "prog.l"
-#line 2 "prog.l"
+#line 1 "lexer.l"
+#line 2 "lexer.l"
 	#include<stdio.h>
 	#include<stdlib.h>
 	#include<malloc.h>
@@ -883,7 +883,7 @@ YY_DECL
 		}
 
 	{
-#line 22 "prog.l"
+#line 22 "lexer.l"
 
 #line 889 "lex.yy.c"
 
@@ -945,138 +945,138 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 23 "prog.l"
+#line 23 "lexer.l"
 ;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 24 "prog.l"
+#line 24 "lexer.l"
 {insert(yytext,'o');}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 25 "prog.l"
+#line 25 "lexer.l"
 {insert(yytext,'o');}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 26 "prog.l"
+#line 26 "lexer.l"
 {insert(yytext,'d');}
 	YY_BREAK
 case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
-#line 27 "prog.l"
+#line 27 "lexer.l"
 {;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 28 "prog.l"
+#line 28 "lexer.l"
 {printf("ERROR: Printf statement\n");}
 	YY_BREAK
 case 7:
 /* rule 7 can match eol */
 YY_RULE_SETUP
-#line 29 "prog.l"
+#line 29 "lexer.l"
 {;}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 30 "prog.l"
+#line 30 "lexer.l"
 {printf("ERROR: Scanf statement\n");}
 	YY_BREAK
 case 9:
 /* rule 9 can match eol */
 YY_RULE_SETUP
-#line 31 "prog.l"
+#line 31 "lexer.l"
 {insert(yytext,'s');}
 	YY_BREAK
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 32 "prog.l"
+#line 32 "lexer.l"
 {printf("ERROR: String Literal\n");}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 33 "prog.l"
+#line 33 "lexer.l"
 {insert(yytext,'k');}
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 34 "prog.l"
+#line 34 "lexer.l"
 {insert(yytext,'k');}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 35 "prog.l"
+#line 35 "lexer.l"
 {insert(yytext,'k');}
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 36 "prog.l"
+#line 36 "lexer.l"
 {BEGIN(mcomment);}
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 37 "prog.l"
+#line 37 "lexer.l"
 {BEGIN(INITIAL);}
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 38 "prog.l"
+#line 38 "lexer.l"
 ;
 	YY_BREAK
 case 17:
 /* rule 17 can match eol */
 YY_RULE_SETUP
-#line 39 "prog.l"
+#line 39 "lexer.l"
 ;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 40 "prog.l"
+#line 40 "lexer.l"
 {insert(yytext,'v');}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 41 "prog.l"
+#line 41 "lexer.l"
 {insert(yytext,'c');}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 42 "prog.l"
+#line 42 "lexer.l"
 {insert(yytext,'c');}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 43 "prog.l"
+#line 43 "lexer.l"
 {printf("ERROR : Bad token %s\n",yytext);}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 44 "prog.l"
+#line 44 "lexer.l"
 {insert(yytext,'c');}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 45 "prog.l"
+#line 45 "lexer.l"
 {insert(yytext,'c');}
 	YY_BREAK
 case 24:
 /* rule 24 can match eol */
 YY_RULE_SETUP
-#line 46 "prog.l"
+#line 46 "lexer.l"
 ;
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 47 "prog.l"
+#line 47 "lexer.l"
 {insert(yytext,'p');}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 48 "prog.l"
+#line 48 "lexer.l"
 ECHO;
 	YY_BREAK
 #line 1083 "lex.yy.c"
@@ -2088,7 +2088,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 48 "prog.l"
+#line 48 "lexer.l"
 
 
 void insert(char* yytext,char type)

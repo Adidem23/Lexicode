@@ -1,11 +1,14 @@
 import Navbar from "./Navbar";
-import HeroSection from "./HeroSection";
+import Lex from './Lex';
 
 const Render = () => {
   return (
     <>
     <Navbar />
-    <HeroSection />
+    <br/>
+    <br/>
+
+    <Lex/>
     </>
   )
 }

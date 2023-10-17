@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const bodyparser = require('body-parser');
 const { exec } = require('child_process');
-const PORT = 8000;
+const PORT = 8500;
 const cors = require('cors');
 const fs = require('fs');
 const records = [];
@@ -29,7 +29,7 @@ app.post('/dothing', async (req, res) => {
                     console.log(" Contents are written To File !!")
           })
 
-          exec('lex prog.l', (error, stdout, stderr) => {
+          exec('lex lexer.l', (error, stdout, stderr) => {
                     if (error) {
                               console.error(`Error: ${error.message}`);
                               return;
