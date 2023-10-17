@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
 import '../CSS/Lex.css';
-import success from '../Images/Success.png'
 
 
 const Lex = () => {
@@ -12,14 +11,17 @@ const Lex = () => {
   const [Analysis, SetAnalysis] = useState(false);
   const [Compiled, SetCompiled] = useState(false);
   const [CompiledOutput, SetCompiledOutput] = useState([]);
+  const [InterMediateOutput, setInterMediateOutput] = useState([]);
 
 
   const handleterminalComm = async (e) => {
     e.preventDefault();
+    alert("File Submitted Successfully!!")
     try {
-      alert("File Submitted Successfully!!")
       axios.post("http://localhost:8500/dothing", { TextFile: Text }).then((res) => {
+
         console.log(res.data)
+
       }).catch((err) => {
         console.log(`${err} is Occured`)
       })
@@ -31,6 +33,7 @@ const Lex = () => {
 
   const GetRecordsFromBackend = async () => {
     SetAnalysis(true)
+
     axios.get("http://localhost:8500/records").then((res) => {
       SetRecordsGot(res.data);
       console.log(res.data);
@@ -50,25 +53,36 @@ const Lex = () => {
           const paratext1 = document.getElementById('para1');
           paratext.style.color = "Green";
           paratext1.style.color = "Green";
+          paratext.innerText = "Compiled Successfully!!";
+          paratext1.innerText = "Compiled Code Successfully";
 
         } else {
           const paratext = document.getElementById('para');
           const paratext1 = document.getElementById('para1');
-          const paratext3=document.getElementById('para3');
           paratext.style.color = "Red";
           paratext1.style.color = "Red";
-          paratext3.style.backgroundRepeat="no-repeat";
-          paratext3.style.backgroundSize="cover";
-          paratext.innerText="Not Compiled";
-          paratext1.innerText="Compilation Error!";
-
-
+          paratext.innerText = "Not Compiled";
+          paratext1.innerText = "Compilation Error!";
         }
 
-        console.log(res.data);
+
       }).catch((err) => {
         alert(`${err} is Occured!!`);
         console.log(err);
+      })
+
+
+      axios.post("http://localhost:8500/generateICG", { TextFile: Text }).then((res) => {
+        console.log(res.data);
+        axios.get("http://localhost:8500/getRCG").then((res) => {
+        console.log(res.data);
+        setInterMediateOutput(res.data);
+      }).catch((err) => {
+        console.log(`${err} is Occured`)
+      })
+      
+      }).catch((err) => {
+        console.log(`${err} is Occured`)
       })
 
     }).catch((err) => {
@@ -241,6 +255,15 @@ const Lex = () => {
 
         </div>
       </>}
+
+      {Analysis && <div style={{ color: "whitesmoke", display: 'block', margin: "auto", width: 'fit-content', marginTop: "50px" }}>
+        <h1>Semantics Analysis</h1>
+        <hr />
+      </div>}
+
+      {Analysis && <p style={{color:'white'}}>{InterMediateOutput}</p>}
+
+
 
 
     </>

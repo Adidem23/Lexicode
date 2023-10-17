@@ -6,6 +6,7 @@ const PORT = 8500;
 const cors = require('cors');
 const fs = require('fs');
 const records = [];
+const process = require('process');
 
 
 app.use(bodyparser.urlencoded({ extended: true }))
@@ -121,6 +122,57 @@ app.post('/AnalyzeText', (req, res) => {
                     res.send("Compiled File Successfully");
           });
 
+})
+
+const Original = process.cwd();
+
+app.post("/generateICG", (req, res) => {
+
+          const TextFile = req.body.TextFile;
+          console.log("TextFile is : " + TextFile);
+
+          const Directory = "./ICG"
+          process.chdir(Directory);
+
+          fs.writeFile('tests/test1.c', TextFile, () => {
+                    console.log(" Contents are written To File !!")
+          })
+
+
+
+          exec('./run.sh', (error, stdout, stderr) => {
+                    if (error) {
+                              console.error(`Error: ${error.message}`);
+                              return;
+                    }
+                    console.log(`STDOUT is : ${stdout}`);
+                    res.send(stdout);
+                    process.chdir(Original)
+                    fs.writeFile('./ICG.txt', stdout, () => {
+                              console.log(" Contents are written To Output File !!")
+                    })
+                    if (stderr) {
+                              console.error(`Error: ${stderr}`);
+                              return;
+                    }
+          });
+
+
+})
+
+app.get("/getRCG", (req, res) => {
+          exec('node Seperate.js', (error, stdout, stderr) => {
+                    if (error) {
+                              console.error(`Error: ${error.message}`);
+                              return;
+                    }
+                    console.log("Standard output is : "+stdout)
+                    res.send(stdout);
+                    if (stderr) {
+                              console.error(`Error: ${stderr}`);
+                              return;
+                    }
+          });
 })
 
 

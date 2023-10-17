@@ -1,14 +1,15 @@
 import Navbar from "./Navbar";
 import Lex from './Lex';
+import ICG from "./ICG";
 
 const Render = () => {
   return (
     <>
-    <Navbar />
-    <br/>
-    <br/>
+      <Navbar />
+      <br />
+      <br />
+      <Lex />
 
-    <Lex/>
     </>
   )
 }

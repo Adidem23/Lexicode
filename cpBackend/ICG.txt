@@ -1,0 +1,61 @@
+Running: 1
+
+
+===================================  [1;33mRunning TestCase 1[0m  ===================================
+func begin myfunc
+t0 = a + b
+func end
+
+func begin main
+L0:
+t1 = 3
+t2 = a < t1
+IF not t2 GoTo L1
+t3 = a + b
+a = t3
+t4 = 0
+i = t4
+L2:
+t5 = i < b
+IF not t5 GoTo L3
+t6 = i + 1
+i = t6
+t7 = b + 1
+b = t7
+refparam a
+refparam b
+refparam result
+call myfunc, 2
+GoTo L2:
+L3:
+t8 = a + 1
+a = t8
+GoTo L0:
+L1:
+func end
+
+[32mStatus: Parsing Complete - Valid[0m
+                              [36mSYMBOL TABLE[0m
+                               ------------
+    SYMBOL |           CLASS |       TYPE |      VALUE |    LINE NO |         NESTING | PARAMS COUNT |
+----------------------------------------------------------------------------------------------------
+         a |      Identifier |        int |            |          3 |           99999 |         -1 |
+         b |      Identifier |        int |            |          3 |           99999 |         -1 |
+         a |      Identifier |        int |          3 |         10 |           99999 |         -1 |
+         b |      Identifier |        int |            |         10 |           99999 |         -1 |
+         i |      Identifier |        int |            |         10 |           99999 |         -1 |
+       for |         Keyword |            |            |         15 |            9999 |         -1 |
+    return |         Keyword |            |            |          5 |            9999 |         -1 |
+       int |         Keyword |            |            |          3 |            9999 |         -1 |
+      main |        Function |       void |            |          8 |            9999 |          0 |
+    myfunc |        Function |        int |            |          3 |            9999 |          2 |
+     while |         Keyword |            |            |         12 |            9999 |         -1 |
+      void |         Keyword |            |            |          8 |            9999 |         -1 |
+
+
+                              [36mCONSTANT TABLE[0m
+                               --------------
+      NAME |            TYPE
+---------------------------------------------------------------------------------
+         0 | Number Constant
+         3 | Number Constant

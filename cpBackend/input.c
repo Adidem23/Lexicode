@@ -1,8 +1,24 @@
 #include <stdio.h>
-int main() {
-    int age;
-    printf("Enter your age: ");
-    scanf("%d", &age);
-    printf("You are %d years old.\n", age);
-    return 0;
+
+int myfunc(int a,int b)
+{
+	return a+b;
+}
+
+void main()
+{
+	int a,b,i;
+
+	while(a<3)
+	{
+		a = a+b;
+		for(i=0;i<b;i++)
+		{
+			b++;
+			myfunc(a,b);
+
+		}
+		a++;
+	}
+	
 }
