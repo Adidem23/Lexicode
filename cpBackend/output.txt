@@ -5,8 +5,13 @@
 	(			Punctuator			3
 	)			Punctuator			4
 	{			Punctuator			5
-	;			Punctuator			6
-	return			Keyword			7
-	0			Constant			8
+	int			Keyword			6
+	age			Identifier			7
+	;			Punctuator			8
 	;			Punctuator			9
-	}			Punctuator			10
+	;			Punctuator			10
+	;			Punctuator			11
+	return			Keyword			12
+	0			Constant			13
+	;			Punctuator			14
+	}			Punctuator			15

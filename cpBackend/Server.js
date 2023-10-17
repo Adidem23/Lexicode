@@ -100,7 +100,7 @@ app.get('/records', async (req, res) => {
 app.post('/writeSyntaxFile', (req, res) => {
           const TextFile = req.body.TextFile;
 
-          fs.writeFile('NewInput.c', TextFile, () => {
+          fs.writeFile('InputSyntax.c', TextFile, () => {
                     console.log(" Contents are written To File !!")
           })
 
@@ -108,7 +108,7 @@ app.post('/writeSyntaxFile', (req, res) => {
 
 app.post('/AnalyzeText', (req, res) => {
 
-          exec('gcc NewInput.c', (error, stderr) => {
+          exec('gcc InputSyntax.c', (error, stderr) => {
                     if (error) {
                               res.json({ error: `${error.message}` });
                               return;

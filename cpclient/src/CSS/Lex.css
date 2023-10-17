@@ -141,19 +141,6 @@ button::before {
     background: #8792eb;
 }
 
-button:hover::after {
-    clip-path: polygon(0 30%, 9% 34%, 7% 39%, 11% 43%, 13% 33%, 17% 30%, 24% 34%, 25% 35%, 30% 31%, 30% 38%, 39% 33%, 35% 43%, 43% 45%, 55% 46%, 65% 74%, 67% 66%, 81% 57%, 75% 82%, 81% 86%, 83% 88%, 88% 91%, 90% 94%, 94% 96%, 98% 98%, 100% 100%, 82% 100%, 0 100%);
-    height: 80%;
-}
-
-button:hover::before {
-    clip-path: polygon(0 30%, 9% 34%, 7% 39%, 11% 43%, 13% 33%, 17% 30%, 24% 34%, 25% 35%, 30% 31%, 30% 38%, 39% 33%, 35% 43%, 43% 45%, 55% 46%, 65% 74%, 67% 66%, 81% 57%, 75% 82%, 81% 86%, 83% 88%, 88% 91%, 90% 94%, 94% 96%, 98% 98%, 100% 100%, 82% 100%, 0 100%);
-    height: 80%;
-}
-
-
-
-
 /* This is for the code of the Button */
 
 /* This is for the Css of the Table */
@@ -176,7 +163,7 @@ td {
 }
 
 th {
-    color: black;
+    color: whitesmoke;
 
 }
 
@@ -282,3 +269,96 @@ th {
 
 
 /* This will be For card of Summary ends*/
+
+
+/* This is Compilation Success Starts*/
+
+.cardopahe {
+    width: 100%;
+    max-width: 300px;
+    min-width: 200px;
+    height: 250px;
+    background-color: #292929;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.24);
+    border: 2px solid rgba(7, 7, 7, 0.12);
+    font-size: 16px;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .iconopahe {
+    /* margin: 0 auto; */
+    width: 100%;
+    height: 80px;
+    max-width: 80px;
+    /* background: linear-gradient(90deg, #7eaaff 0%, #ff48fb 40%, rgba(0, 0, 0, 0.28) 60%); */
+    background-image: url('../Images/success.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.8s ease;
+    background-position: 0px;
+    background-size: 70px;
+  }
+  
+  .iconopahe svg {
+    fill: white;
+  }
+  
+  .cardopahe .titleopahe {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    margin-top: 30px;
+    color: white;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+  }
+  
+  .cardopahe .textopahe {
+    width: 80%;
+    margin: 0 auto;
+    font-size: 13px;
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    font-weight: 200;
+    letter-spacing: 2px;
+    opacity: 0;
+    max-height: 0;
+    transition: all 0.3s ease;
+  }
+  
+  .cardopahe:hover {
+    height: 270px;
+  }
+  
+  .cardopahe:hover .textopahe {
+    transition: all 0.3s ease;
+    opacity: 1;
+    max-height: 40px;
+  }
+  
+  /* .cardopahe:hover .iconopahe {
+    background-position: -120px;
+    transition: all 0.3s ease;
+  } */
+  
+  /* .cardopahe:hover .iconopahe svg path {
+    fill: url('#gradientColor');
+    transition: all 0.3s ease;
+  } */
+
+/* This is Compilation Success Ends */

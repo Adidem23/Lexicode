@@ -2,6 +2,7 @@ import React from 'react'
 import axios from 'axios';
 import { useState } from 'react';
 import '../CSS/Lex.css';
+import success from '../Images/Success.png'
 
 
 const Lex = () => {
@@ -9,6 +10,8 @@ const Lex = () => {
   const [Text, SetText] = useState(null);
   const [RecordsGot, SetRecordsGot] = useState([]);
   const [Analysis, SetAnalysis] = useState(false);
+  const [Compiled, SetCompiled] = useState(false);
+  const [CompiledOutput, SetCompiledOutput] = useState([]);
 
 
   const handleterminalComm = async (e) => {
@@ -31,7 +34,43 @@ const Lex = () => {
     axios.get("http://localhost:8500/records").then((res) => {
       SetRecordsGot(res.data);
       console.log(res.data);
-      alert("Tokens Are Created!!")
+      alert("Tokens Are Created!!");
+
+      axios.post("http://localhost:8500/writeSyntaxFile", { TextFile: Text }).then((res) => {
+        console.log(res.data)
+      }).catch((err) => {
+        console.log(`${err} is Occured`)
+      })
+
+      axios.post("http://localhost:8500/AnalyzeText").then((res) => {
+        SetCompiledOutput(JSON.stringify(res.data));
+
+        if (res.data == "Compiled File Successfully") {
+          const paratext = document.getElementById('para');
+          const paratext1 = document.getElementById('para1');
+          paratext.style.color = "Green";
+          paratext1.style.color = "Green";
+
+        } else {
+          const paratext = document.getElementById('para');
+          const paratext1 = document.getElementById('para1');
+          const paratext3=document.getElementById('para3');
+          paratext.style.color = "Red";
+          paratext1.style.color = "Red";
+          paratext3.style.backgroundRepeat="no-repeat";
+          paratext3.style.backgroundSize="cover";
+          paratext.innerText="Not Compiled";
+          paratext1.innerText="Compilation Error!";
+
+
+        }
+
+        console.log(res.data);
+      }).catch((err) => {
+        alert(`${err} is Occured!!`);
+        console.log(err);
+      })
+
     }).catch((err) => {
       console.log(`${err} is Occured`)
 
@@ -39,13 +78,15 @@ const Lex = () => {
 
   }
 
+
+
   let punctuatorCount = 0;
   let keywordCount = 0;
   let identifierCount = 0;
   let operatorCount = 0;
 
   const CountParameters = async () => {
-    
+
 
     RecordsGot.forEach(item => {
       switch (item.token) {
@@ -63,11 +104,6 @@ const Lex = () => {
           break;
       }
     });
-
-    console.log('Punctuators:', punctuatorCount);
-    console.log('Keywords:', keywordCount);
-    console.log('Identifiers:', identifierCount);
-    console.log('Operators:', operatorCount);
   }
 
   CountParameters();
@@ -92,8 +128,8 @@ const Lex = () => {
 
         </div>
 
-        {Analysis && <div style={{ color: "whitesmoke" }}>
-          <h4>Lexical Analysis</h4>
+        {Analysis && <div style={{ color: "whitesmoke", display: 'block', width: 'fit-content', margin: 'auto', marginTop: "50px" }}>
+          <h1>Lexical Analysis</h1>
           <hr />
           The Total Tokens Created Are : {RecordsGot.length}
         </div>}
@@ -106,7 +142,7 @@ const Lex = () => {
                 <tr>
                   <th>Lexeme</th>
                   <th>Token</th>
-                  <th>Value</th>
+                  <th>Token Number</th>
                 </tr>
               </thead>
               <tbody>
@@ -122,7 +158,7 @@ const Lex = () => {
           </div>
         </>}
 
-        {Analysis && <h1 style={{color:"whitesmoke",margin:'auto',width:"fit-content"}}>Lexemes Output</h1>}
+        {Analysis && <h1 style={{ color: "whitesmoke", margin: 'auto', width: "fit-content" }}>Lexemes Output</h1>}
         <div className='mainDiv'>
           {RecordsGot && RecordsGot.map((val) => {
             return (<>
@@ -145,12 +181,12 @@ const Lex = () => {
       </div>
 
       {Analysis && <>
-        <div style={{ color: "whitesmoke",marginTop:"50px"}}>
-          <h1 style={{display:'block',width:'fit-content',margin:'auto'}}>Summary Lexical Analysis</h1>
-          <hr style={{width:'fit-content'}}/>
+        <div style={{ color: "whitesmoke", marginTop: "50px" }}>
+          <h1 style={{ display: 'block', width: 'fit-content', margin: 'auto' }}>Summary Lexical Analysis</h1>
+          <hr style={{ width: 'fit-content' }} />
 
           <div className='gridcontanier'>
-            
+
             <div className="card1234 item">
               <div className="card-content1234">
                 <p className="card-title1234">Punctuators
@@ -187,6 +223,24 @@ const Lex = () => {
         </div>
       </>
       }
+
+
+      {Analysis && <div style={{ color: "whitesmoke", display: 'block', margin: "auto", width: 'fit-content', marginTop: "40px" }}>
+        <h1>Syntax Analysis</h1>
+        <hr />
+      </div>}
+
+      {Analysis && <>
+        <div style={{ display: "block", margin: "auto", marginTop: "20px", width: "fit-content", overflow: 'hidden' }}>
+          <div className="cardopahe">
+            <div className="iconopahe" id='para3'>
+            </div>
+            <><p className="titleopahe" id='para'>Compiled Successfully</p>
+              <p className="textopahe" id='para1'>Your File is Compiled Successfully</p></>
+          </div>
+
+        </div>
+      </>}
 
 
     </>
