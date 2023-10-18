@@ -12,6 +12,7 @@ const Lex = () => {
   const [Compiled, SetCompiled] = useState(false);
   const [CompiledOutput, SetCompiledOutput] = useState([]);
   const [InterMediateOutput, setInterMediateOutput] = useState([]);
+  const [CodeOutput, SetCodeOutput] = useState([]);
 
 
   const handleterminalComm = async (e) => {
@@ -73,14 +74,24 @@ const Lex = () => {
 
 
       axios.post("http://localhost:8500/generateICG", { TextFile: Text }).then((res) => {
-        console.log(res.data);
+        console.log(" All Things which are There: " + res.data);
+
         axios.get("http://localhost:8500/getRCG").then((res) => {
-        console.log(res.data);
-        setInterMediateOutput(res.data);
-      }).catch((err) => {
-        console.log(`${err} is Occured`)
-      })
-      
+          console.log("After All Things which are There: " + res.data);
+          setInterMediateOutput(res.data);
+          
+          // axios.post("http://localhost:8500/giveResult",{TextFile:Text}).then((res) => {
+          //   SetCodeOutput(res.data);
+          // }).catch((err) => {
+          //   console.log(`${err} is Occured`)
+          // })
+
+        }).catch((err) => {
+          console.log(`${err} is Occured`)
+        })
+
+
+
       }).catch((err) => {
         console.log(`${err} is Occured`)
       })
@@ -150,7 +161,7 @@ const Lex = () => {
 
         {Analysis && <>
           <div>
-            <h1 style={{ display: "block", margin: "auto", width: "fit-content", color: "white", marginTop: "20px" }}>Symbol Table Output</h1>
+            <h1 style={{ display: "block", margin: "auto", width: "fit-content", color: "white", marginTop: "20px" }}>Lexeme Output</h1>
             <table>
               <thead>
                 <tr>
@@ -257,12 +268,29 @@ const Lex = () => {
       </>}
 
       {Analysis && <div style={{ color: "whitesmoke", display: 'block', margin: "auto", width: 'fit-content', marginTop: "50px" }}>
-        <h1>Semantics Analysis</h1>
+        <h1>Semantics Analysis And ICG</h1>
         <hr />
       </div>}
 
-      {Analysis && <p style={{color:'white'}}>{InterMediateOutput}</p>}
+      {Analysis && <p style={{ color: 'white' }}>{InterMediateOutput}</p>}
 
+
+
+      {Analysis && <div style={{ color: "whitesmoke", display: 'block', margin: "auto", width: 'fit-content', marginTop: "50px" }}>
+        <h1>Code Output</h1>
+        <hr />
+      </div>}
+      
+      {Analysis && <>
+        <div style={{ display: "block", margin: "auto", marginTop: "20px", width: "fit-content", overflow: 'hidden' }}>
+          <div className="cardopahe">
+            <div className="iconopahe">
+            </div>
+            <><p className="titleopahe">{CompiledOutput}</p></>
+          </div>
+
+        </div>
+      </>}
 
 
 

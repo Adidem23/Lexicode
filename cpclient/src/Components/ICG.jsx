@@ -22,10 +22,16 @@ const ICG = () => {
 
           const makereq = async () => {
 
-                    axios.post("http://localhost:8500/generateICG", { TextFile:Text}).then((res) => {
-                              console.log(res.data)
-                    }).catch((err) => {
-                              console.log(`${err} is Occured`)
+                    // axios.post("http://localhost:8500/generateICG", { TextFile:Text}).then((res) => {
+                    //           console.log(res.data)
+                    // }).catch((err) => {
+                    //           console.log(`${err} is Occured`)
+                    // })
+
+                    axios.get("http://localhost:8500/giveResult").then((res)=>{
+                        console.log("Code Output is : " +res.data);
+                    }).catch((err)=>{
+                        console.log("Error is: "+err);
                     })
           }
 

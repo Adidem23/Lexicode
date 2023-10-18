@@ -129,7 +129,6 @@ const Original = process.cwd();
 app.post("/generateICG", (req, res) => {
 
           const TextFile = req.body.TextFile;
-          console.log("TextFile is : " + TextFile);
 
           const Directory = "./ICG"
           process.chdir(Directory);
@@ -145,7 +144,6 @@ app.post("/generateICG", (req, res) => {
                               console.error(`Error: ${error.message}`);
                               return;
                     }
-                    console.log(`STDOUT is : ${stdout}`);
                     res.send(stdout);
                     process.chdir(Original)
                     fs.writeFile('./ICG.txt', stdout, () => {
@@ -166,7 +164,7 @@ app.get("/getRCG", (req, res) => {
                               console.error(`Error: ${error.message}`);
                               return;
                     }
-                    console.log("Standard output is : "+stdout)
+                    console.log("GETRCG output is : " + stdout)
                     res.send(stdout);
                     if (stderr) {
                               console.error(`Error: ${stderr}`);
@@ -174,6 +172,48 @@ app.get("/getRCG", (req, res) => {
                     }
           });
 })
+
+
+// app.post("/giveResult", (req, res) => {
+
+//           const TextFile = req.body.TextFile;
+
+//           const needir = "./Output"
+
+//           process.chdir(needir);
+
+//           fs.writeFile('input.c', TextFile, () => {
+//                     console.log(" Contents are written To File !!")
+//           })
+
+
+//           exec('gcc input.c', (error, stdout, stderr) => {
+//                     if (error) {
+//                               console.error(`Error: ${error.message}`);
+//                               return;
+//                     }
+//                     if (stderr) {
+//                               console.error(`Error: ${stderr}`);
+//                               return;
+//                     }
+//           });
+
+
+//           exec('./a.out input.c', (error, stdout, stderr) => {
+//                     if (error) {
+//                               console.error(`Error: ${error.message}`);
+//                               return;
+//                     }
+//                     console.log("./a output is : " + stdout)
+//                     res.send(stdout);
+//                     process.chdir(Original);
+//                     if (stderr) {
+//                               console.error(`Error: ${stderr}`);
+//                               return;
+//                     }
+//           });
+
+// });
 
 
 app.listen(PORT, () => {

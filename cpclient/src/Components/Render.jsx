@@ -9,7 +9,6 @@ const Render = () => {
       <br />
       <br />
       <Lex />
-
     </>
   )
 }
