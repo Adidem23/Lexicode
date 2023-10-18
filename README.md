@@ -11,5 +11,5 @@ This project focuses on Web Based Application which can visulizes the tokens , l
 - Expressjs for Backend
 - Docker For Containerization
   
-# Docker Frontend Image : https://hub.docker.com/r/adidem23/lexicodefrontend
-# Docker Backend Image : https://hub.docker.com/r/adidem23/lexicodebackend
+# Docker Frontend Image : https://hub.docker.com/r/adidem23/lexicodefinal
+# Docker Backend Image : https://hub.docker.com/r/adidem23/lexicodefinalbackend
