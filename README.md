@@ -31,8 +31,11 @@ Welcome to our web-based C compiler visualization tool! Our platform is designed
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
- - [![My Skills](https://skillicons.dev/icons?i=react&perline=3)](https://skillicons.dev) ReactJs
- - NodeJs [![My Skills](https://skillicons.dev/icons?i=nodejs&perline=3)](https://skillicons.dev)
+ - [![My Skills](https://skillicons.dev/icons?i=react&perline=3)](https://skillicons.dev) 
+ - [![My Skills](https://skillicons.dev/icons?i=nodejs&perline=3)](https://skillicons.dev)
+ - [![My Skills](https://skillicons.dev/icons?i=express&perline=3)](https://skillicons.dev)
+ - [![My Skills](https://skillicons.dev/icons?i=linux&perline=3)](https://skillicons.dev)
+ - [![My Skills](https://skillicons.dev/icons?i=docker&perline=3)](https://skillicons.dev)
 
 <!-- GETTING STARTED -->
 ## Getting Started
