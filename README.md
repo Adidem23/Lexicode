@@ -36,6 +36,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
  - [![My Skills](https://skillicons.dev/icons?i=express&perline=3)](https://skillicons.dev) ExpressJs
  - [![My Skills](https://skillicons.dev/icons?i=linux&perline=3)](https://skillicons.dev) Linux
  - [![My Skills](https://skillicons.dev/icons?i=docker&perline=3)](https://skillicons.dev) Docker
+ - [![My Skills](https://skillicons.dev/icons?i=bash&perline=3)](https://skillicons.dev) Bash-Shell
  - AlongSide This Used Lex,Flex, Bison , NodeJs-Child Processes , File Handling 
 
 <!-- GETTING STARTED -->
@@ -81,27 +82,34 @@ Follow The Installation manual and install dependencies
    cd cpbackend
    nodemon Server.js
    ```
-6. Enter C file Code and GOOd to GO
+6. Enter C file Code and Good TO GO
 
 ## Output and Screenshots and Video Output :
 
 - FrontPage :
+  
   <img width="957" alt="Screenshot 2023-10-27 214526" src="https://github.com/Adidem23/Lexicode/assets/124609794/11e91fba-7c4c-495b-9dbe-55ebbcecdf25">
 
 - Lexical Analysis 1.0 :
+  
   ![image](https://github.com/Adidem23/Lexicode/assets/124609794/a236712b-5462-4ba2-9b2e-5732b2329f0c)
 
 - Lexical Analysis 2.0 :
+  
   ![image](https://github.com/Adidem23/Lexicode/assets/124609794/46082116-cf43-4a55-ad7d-9b7e454b2607)
 
 - Lexical Analysis 3.0 :
+  
   ![image](https://github.com/Adidem23/Lexicode/assets/124609794/9325516f-a3b6-40af-83d5-9a27fe26a883)
 
 - Syntax Analysis :
+  
   <img width="960" alt="Screenshot 2023-10-27 214844" src="https://github.com/Adidem23/Lexicode/assets/124609794/37e83cc1-cfd8-46b9-b689-78e8b2988024">
 
 - Semantic Analysis :
+  
   ![image](https://github.com/Adidem23/Lexicode/assets/124609794/bd47244f-96f4-4f0a-8c0a-8f1f2212f2a7)
 
 - Video Output of Code :
+  
   https://www.loom.com/share/d963993a91344101b43c5f0605f9d601?sid=10758432-140f-4005-9dfb-7914dc09cf0f
