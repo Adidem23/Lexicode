@@ -1,8 +1,5 @@
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a>
-
+ ![Lexicode](https://github.com/Adidem23/Lexicode/assets/124609794/502821b8-db56-4cd9-a9d7-658b39224319)
   <h3 align="center"> Lexicode : C code Compiler visualization Tool </h3>
 </div>
 <details>
