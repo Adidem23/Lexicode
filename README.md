@@ -51,15 +51,19 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
+* Linux or Ubuntu must be there in your system 
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone this repo 
+2.Install NPM Modules
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   cd cpfrontend
+   npm install --force
+   cd cpBackend
+   npm install --force 
    ```
 3. Install NPM packages
    ```sh
