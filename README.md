@@ -3,25 +3,8 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Lexicode : C code Compiler visualization Tool</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
-  </p>
+  <h3 align="center"> Lexicode : C code Compiler visualization Tool </h3>
 </div>
-
-
-
-<!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
@@ -52,20 +35,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
-
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
-
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
-
-Use the `BLANK_README.md` to get started.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Welcome to our web-based C compiler visualization tool! Our platform is designed to empower both novice and experienced programmers by providing a unique and user-friendly way to interact with and understand the intricacies of C programming. With our tool, you can not only write, compile, and run C code directly in your web browser but also visualize the entire compilation process step by step. Whether you're a student learning C or a seasoned developer looking for a powerful debugging and teaching resource, our tool is here to simplify your journey. Explore the fascinating world of C programming with ease, boost your coding skills, and gain a deeper understanding of the compiler's inner workings. We're excited to be your trusted companion in your programming adventures
 
 
 
