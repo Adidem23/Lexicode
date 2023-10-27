@@ -67,7 +67,7 @@ Follow The Installation manual and install dependencies
    cd cpBackend
    npm install --force 
    ```
-3. Install Lex , Flex and bison
+3.Install Lex , Flex and bison
    ```sh
    sudo apt-get update
    sudo apt-get install flex bison
