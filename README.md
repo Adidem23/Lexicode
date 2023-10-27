@@ -19,39 +19,19 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
 </details>
-
-
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
 Welcome to our web-based C compiler visualization tool! Our platform is designed to empower both novice and experienced programmers by providing a unique and user-friendly way to interact with and understand the intricacies of C programming. With our tool, you can not only write, compile, and run C code directly in your web browser but also visualize the entire compilation process step by step. Whether you're a student learning C or a seasoned developer looking for a powerful debugging and teaching resource, our tool is here to simplify your journey. Explore the fascinating world of C programming with ease, boost your coding skills, and gain a deeper understanding of the compiler's inner workings. We're excited to be your trusted companion in your programming adventures
 
-
-
 ### Built With
 
 This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
 
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
+* [![My Skills](https://skillicons.dev/icons?i=reactflutter&perline=3)](https://skillicons.dev)
 
 <!-- GETTING STARTED -->
 ## Getting Started
