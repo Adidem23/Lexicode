@@ -40,11 +40,6 @@ This section should list any major frameworks/libraries used to bootstrap your p
  - AlongSide This Used Lex,Flex, Bison , NodeJs-Child Processes , File Handling 
 
 <!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
@@ -52,7 +47,13 @@ This is an example of how to list things you need to use the software and how to
   ```sh
   npm install npm@latest -g
   ```
-* Linux or Ubuntu must be there in your system 
+  
+* Linux or Ubuntu must be there in your system
+
+* NodeJs
+  ```sh
+  Download Nodejs Version ^ 17.0.0 LTS 
+  ```
 
 ### Installation
 Follow The Installation manual and install dependencies 
