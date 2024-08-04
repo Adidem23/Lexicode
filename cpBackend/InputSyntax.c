@@ -1,12 +1,14 @@
-#include <stdio.h>
+#include<stdio.h>
 
-void main()
+int main()
 {
-	int i,n;
-
+	int a = 2
+	printf("%d",a);
+	a++;
+	int b = 4;
+	int c = 3; 
 	
-		do
-		{
-			printf("hi");
-		}while(i<n);
+	//int b = 8;
+	//int c = 3;
+	a--;
 }

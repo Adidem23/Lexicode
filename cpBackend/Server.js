@@ -101,7 +101,7 @@ app.get('/records', async (req, res) => {
 app.post('/writeSyntaxFile', (req, res) => {
           const TextFile = req.body.TextFile;
 
-          fs.writeFile('InputSyntax.c', TextFile, () => {
+          fs.writeFile('input.c', TextFile, () => {
                     console.log(" Contents are written To File !!")
           })
 
@@ -109,7 +109,7 @@ app.post('/writeSyntaxFile', (req, res) => {
 
 app.post('/AnalyzeText', (req, res) => {
 
-          exec('gcc InputSyntax.c', (error, stderr) => {
+          exec('gcc input.c', (error, stderr) => {
                     if (error) {
                               res.json({ error: `${error.message}` });
                               return;
@@ -158,62 +158,63 @@ app.post("/generateICG", (req, res) => {
 
 })
 
-app.get("/getRCG", (req, res) => {
-          exec('node Seperate.js', (error, stdout, stderr) => {
+// app.get("/getRCG", (req, res) => {
+//           exec('node Seperate.js', (error, stdout, stderr) => {
+//                     if (error) {
+//                               console.error(`Error: ${error.message}`);
+//                               return;
+//                     }
+//                     console.log("GETRCG output is : " + stdout)
+//                     res.send(stdout);
+//                     if (stderr) {
+//                               console.error(`Error: ${stderr}`);
+//                               return;
+//                     }
+//           });
+// })
+
+
+app.post("/giveResult", (req, res) => {
+
+          const TextFile = req.body.TextFile;
+
+          const needir = "../Newfile"
+
+          process.chdir(needir);
+
+          fs.writeFile('inputNew.c', TextFile, () => {
+                    console.log(" Contents are written To File !!")
+          })
+
+
+          exec('gcc inputNew.c', (error, stdout, stderr) => {
                     if (error) {
                               console.error(`Error: ${error.message}`);
                               return;
                     }
-                    console.log("GETRCG output is : " + stdout)
-                    res.send(stdout);
                     if (stderr) {
                               console.error(`Error: ${stderr}`);
                               return;
                     }
           });
-})
 
 
-// app.post("/giveResult", (req, res) => {
+          exec('./a.out inputNew.c', (error, stdout, stderr) => {
+                    if (error) {
+                              console.error(`Error: ${error.message}`);
+                              return;
+                    }
+                    console.log("./a output is : " + stdout)
+                    res.send(stdout);
+                    process.chdir(Original);
+                    if (stderr) {
+                              console.error(`Error: ${stderr}`);
+                              return;
+                    }
+          });
+          process.chdir(Original);
 
-//           const TextFile = req.body.TextFile;
-
-//           const needir = "./Output"
-
-//           process.chdir(needir);
-
-//           fs.writeFile('input.c', TextFile, () => {
-//                     console.log(" Contents are written To File !!")
-//           })
-
-
-//           exec('gcc input.c', (error, stdout, stderr) => {
-//                     if (error) {
-//                               console.error(`Error: ${error.message}`);
-//                               return;
-//                     }
-//                     if (stderr) {
-//                               console.error(`Error: ${stderr}`);
-//                               return;
-//                     }
-//           });
-
-
-//           exec('./a.out input.c', (error, stdout, stderr) => {
-//                     if (error) {
-//                               console.error(`Error: ${error.message}`);
-//                               return;
-//                     }
-//                     console.log("./a output is : " + stdout)
-//                     res.send(stdout);
-//                     process.chdir(Original);
-//                     if (stderr) {
-//                               console.error(`Error: ${stderr}`);
-//                               return;
-//                     }
-//           });
-
-// });
+});
 
 
 app.listen(PORT, () => {

@@ -1,60 +1,39 @@
 	Lexeme			Token			Value
-	#include<stdio.h>			Preprocessor Statement			0
+	#include <stdio.h>			Preprocessor Statement			0
 	int			Keyword			1
 	main			Identifier			2
 	(			Punctuator			3
 	)			Punctuator			4
 	{			Punctuator			5
 	int			Keyword			6
-	a			Identifier			7
-	=			Operator			8
-	5			Constant			9
+	num			Identifier			7
+	;			Punctuator			8
+	;			Punctuator			9
 	;			Punctuator			10
-	while			Keyword			11
+	if			Keyword			11
 	(			Punctuator			12
-	a			Identifier			13
+	num			Identifier			13
 	>			Operator			14
 	0			Constant			15
 	)			Punctuator			16
 	{			Punctuator			17
 	;			Punctuator			18
-	a			Identifier			19
-	--			Operator			20
-	;			Punctuator			21
-	}			Punctuator			22
-	a			Identifier			23
-	=			Operator			24
-	4			Constant			25
-	;			Punctuator			26
-	while			Keyword			27
-	(			Punctuator			28
-	a			Identifier			29
-	>			Operator			30
-	0			Constant			31
-	)			Punctuator			32
-	{			Punctuator			33
-	;			Punctuator			34
-	a			Identifier			35
-	--			Operator			36
-	;			Punctuator			37
-	int			Keyword			38
-	b			Identifier			39
-	;			Punctuator			40
-	b			Identifier			41
-	=			Operator			42
-	4			Constant			43
-	;			Punctuator			44
-	while			Keyword			45
-	(			Punctuator			46
-	b			Identifier			47
-	>			Operator			48
-	0			Constant			49
-	)			Punctuator			50
-	{			Punctuator			51
-	;			Punctuator			52
-	b			Identifier			53
-	--			Operator			54
-	;			Punctuator			55
-	}			Punctuator			56
-	}			Punctuator			57
-	}			Punctuator			58
+	}			Punctuator			19
+	else			Keyword			20
+	if			Keyword			21
+	(			Punctuator			22
+	num			Identifier			23
+	<			Operator			24
+	0			Constant			25
+	)			Punctuator			26
+	{			Punctuator			27
+	;			Punctuator			28
+	}			Punctuator			29
+	else			Keyword			30
+	{			Punctuator			31
+	;			Punctuator			32
+	}			Punctuator			33
+	return			Keyword			34
+	0			Constant			35
+	;			Punctuator			36
+	}			Punctuator			37

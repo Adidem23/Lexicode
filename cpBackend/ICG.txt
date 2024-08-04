@@ -3,33 +3,10 @@ Running: 1
 
 ===================================  [1;33mRunning TestCase 1[0m  ===================================
 func begin main
-L0:
-refparam "hi"
+refparam "Enter a number: "
 refparam result
 call printf, 1
-t0 = i < n
-IF not t0 GoTo L1
-GoTo L0:
-L1:
-func end
-
-[32mStatus: Parsing Complete - Valid[0m
-                              [36mSYMBOL TABLE[0m
-                               ------------
-    SYMBOL |           CLASS |       TYPE |      VALUE |    LINE NO |         NESTING | PARAMS COUNT |
-----------------------------------------------------------------------------------------------------
-         i |      Identifier |        int |            |          5 |           99999 |         -1 |
-         n |      Identifier |        int |            |          5 |           99999 |         -1 |
-        do |         Keyword |            |            |          8 |            9999 |         -1 |
-       int |         Keyword |            |            |          5 |            9999 |         -1 |
-      main |        Function |       void |            |          3 |            9999 |          0 |
-    printf |        Function |            |            |         10 |            9999 |         -1 |
-     while |         Keyword |            |            |         11 |            9999 |         -1 |
-      void |         Keyword |            |            |          3 |            9999 |         -1 |
-
-
-                              [36mCONSTANT TABLE[0m
-                               --------------
-      NAME |            TYPE
----------------------------------------------------------------------------------
-      "hi" | String Constant
+refparam "%d"
+[31m6 syntax error &
+[31mStatus: Parsing Failed - Invalid
+[0m

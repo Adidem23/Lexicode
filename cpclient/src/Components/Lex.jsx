@@ -40,14 +40,15 @@ const Lex = () => {
       console.log(res.data);
       alert("Tokens Are Created!!");
 
-      axios.post("http://localhost:8500/writeSyntaxFile", { TextFile: Text }).then((res) => {
-        console.log(res.data)
-      }).catch((err) => {
-        console.log(`${err} is Occured`)
-      })
+      // axios.post("http://localhost:8500/writeSyntaxFile", { TextFile: Text }).then((res) => {
+      //   console.log(res.data)
+      // }).catch((err) => {
+      //   console.log(`${err} is Occured`)
+      // })
 
       axios.post("http://localhost:8500/AnalyzeText").then((res) => {
         SetCompiledOutput(JSON.stringify(res.data));
+        console.log(res.data);
 
         if (res.data == "Compiled File Successfully") {
           const paratext = document.getElementById('para');
@@ -74,22 +75,22 @@ const Lex = () => {
 
 
       axios.post("http://localhost:8500/generateICG", { TextFile: Text }).then((res) => {
-        console.log(" All Things which are There: " + res.data);
+        console.log(" Results of ICG Are: " + res.data);
+        setInterMediateOutput(res.data);
 
-        axios.get("http://localhost:8500/getRCG").then((res) => {
-          console.log("After All Things which are There: " + res.data);
-          setInterMediateOutput(res.data);
-          
-          // axios.post("http://localhost:8500/giveResult",{TextFile:Text}).then((res) => {
-          //   SetCodeOutput(res.data);
-          // }).catch((err) => {
-          //   console.log(`${err} is Occured`)
-          // })
 
+        // axios.get("http://localhost:8500/getRCG").then((res) => {
+        //   console.log("After All Things which are There: " + res.data);
+        // }).catch((err) => {
+        //   console.log(`${err} is Occured`)
+        // })
+
+
+        axios.post("http://localhost:8500/giveResult", { TextFile: Text }).then((res) => {
+          SetCodeOutput(res.data);
         }).catch((err) => {
-          console.log(`${err} is Occured`)
+          console.log(err);
         })
-
 
 
       }).catch((err) => {
@@ -280,17 +281,8 @@ const Lex = () => {
         <h1>Code Output</h1>
         <hr />
       </div>}
-      
-      {Analysis && <>
-        <div style={{ display: "block", margin: "auto", marginTop: "20px", width: "fit-content", overflow: 'hidden' }}>
-          <div className="cardopahe">
-            <div className="iconopahe">
-            </div>
-            <><p className="titleopahe">{CompiledOutput}</p></>
-          </div>
 
-        </div>
-      </>}
+      {Analysis && <div style={{ margin: 'auto', width: 'fit-content', display: 'block',color:"white"}} >{CodeOutput}</div>}
 
 
 
